@@ -1,0 +1,23 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   <ion-navbar>
+      <ion-title *ngIf="!name">Login</ion-title>
+      <ion-title *ngIf="name">{{name}}</ion-title>
+   </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+   <ion-list>
+      <ion-item class="text" *ngFor="let item of items | async">
+         {{item | json}}
+      </ion-item>
+   </ion-list>
+   <button ion-button outline *ngIf="!name" (click)="signInWithFacebook()">Facebook</button>
+   <button ion-button outline *ngIf="name" (click)="signOutFacebook()">Sair</button>
+</ion-content>
